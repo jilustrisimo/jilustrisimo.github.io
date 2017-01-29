@@ -1,0 +1,21 @@
+# Site settings
+title: J. on Coding
+header-img: img/home-bg.png
+email: j.ilustrisimo@gmail.com
+copyright_name: jilustrisimo
+description: > # this means to ignore newlines until "baseurl:"
+  one man's foray into programming
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: 
+github_username:  jilustrisimo
+learn_profile: jilustrisimo
+email_username: j.ilustrisimo@gmail.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
