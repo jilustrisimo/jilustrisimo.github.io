@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Keep It Simple, Stupid"
-date:   2017-02-17 02:24:20 +0000
+date:   2017-02-16 21:24:20 -0500
 ---
 
 
@@ -13,7 +13,7 @@ I built a web app called Project Organizer, in Sinatra. It's designed to help us
 - Expect projects to be marked completed when all tasks are done
 - Delete tasks, projects and account
 
-### Video walkthrough
+## Video walkthrough
 [![IMAGE ALT TEXT](https://img.youtube.com/vi/13SoAVfOfas/0.jpg)](http://www.youtube.com/watch?v=13SoAVfOfas "Video Title")
 
 When I was coming up with how to design the app I had an overambitious idea in my head.  Group projects could be created; other uses could join these projects; the moderator of a group project can assign tasks and set due dates; people could collaborate on the same task etc.
