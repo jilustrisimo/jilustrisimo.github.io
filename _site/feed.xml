@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-17T00:21:30-05:00</updated><id>http://localhost:4000//</id><title type="html">J. on Coding</title><subtitle>one man's foray into programming
+</subtitle><entry><title type="html">Keep It Simple, Stupid</title><link href="http://localhost:4000/2017/02/16/keep_it_simple_stupid/" rel="alternate" type="text/html" title="Keep It Simple, Stupid" /><published>2017-02-16T21:24:20-05:00</published><updated>2017-02-16T21:24:20-05:00</updated><id>http://localhost:4000/2017/02/16/keep_it_simple_stupid</id><content type="html" xml:base="http://localhost:4000/2017/02/16/keep_it_simple_stupid/">&lt;p&gt;I built a web app called Project Organizer, in Sinatra. It’s designed to help users keep track of their projects and its associated tasks.  Currently, its funtionality is fairly straightforward:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create and view projects&lt;/li&gt;
+  &lt;li&gt;Create and view tasks for each project&lt;/li&gt;
+  &lt;li&gt;Mark tasks completed&lt;/li&gt;
+  &lt;li&gt;Expect projects to be marked completed when all tasks are done&lt;/li&gt;
+  &lt;li&gt;Delete tasks, projects and account&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;video-walkthrough&quot;&gt;Video walkthrough&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=13SoAVfOfas&quot; title=&quot;Video Title&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/13SoAVfOfas/0.jpg&quot; alt=&quot;IMAGE ALT TEXT&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When I was coming up with how to design the app I had an overambitious idea in my head.  Group projects could be created; other uses could join these projects; the moderator of a group project can assign tasks and set due dates; people could collaborate on the same task etc.&lt;/p&gt;
+
+&lt;p&gt;However, when it came to trying to map out my object relations it became impossible to try and figure out all the ActiveRecord associations.  Then someone told me something I took to heart: &lt;em&gt;Keep It Simple, Stupid&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Suddenly, it clicked. Why try and build everything I wanted to do into version 1.  I’m building this on my own and I have a limited amount of time I can afford to take on this.  The fact I wanted to do everything all at once was…well &lt;em&gt;stupid&lt;/em&gt;.
+So I kept it simple:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;User has many Projects&lt;/li&gt;
+  &lt;li&gt;Project has many Tasks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Trying to build functional models, controllers and views with those simple relationships would be more than enough work for a budding developer such as myself.  Get that all working crisp and clean first, then build up from that in later versions.  Simple.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jilustrisimo/project-organizer&quot;&gt;link to the github repo if you’re interested&lt;/a&gt;&lt;/p&gt;</content><summary type="html">I built a web app called Project Organizer, in Sinatra. It’s designed to help users keep track of their projects and its associated tasks.  Currently, its funtionality is fairly straightforward:</summary></entry><entry><title type="html">A Man’s First App</title><link href="http://localhost:4000/2017/01/29/a_mans_first_app/" rel="alternate" type="text/html" title="A Man's First App" /><published>2017-01-29T23:35:37-05:00</published><updated>2017-01-29T23:35:37-05:00</updated><id>http://localhost:4000/2017/01/29/a_mans_first_app</id><content type="html" xml:base="http://localhost:4000/2017/01/29/a_mans_first_app/">&lt;p&gt;First, I want to address why this post is mere hours after my first.  I had been sitting on my initial post for quite some time and had finally gotten enough courage to actually complete it.  With that being cleared up…&lt;/p&gt;
+
+&lt;h2 id=&quot;the-english-premier-league-cli&quot;&gt;The English Premier League CLI&lt;/h2&gt;
+
+&lt;p&gt;I just recently finished building my first app, which is now also a ruby gem.  I believe it’s fairly well written for a beginner but I’ll let others be the judge of that.  As to its practicality, I’m not so sure, but hey, this is a learning process.&lt;/p&gt;
+
+&lt;p&gt;I named my app the English Premier League CLI and built it in Ruby.  it provides a CLI version of the current English Premier League (that’s the top flight of English football/soccer for the uninitiated) table.  A user can then choose to learn more about a particular club by providing input.&lt;br /&gt;
+I have always been a fan of football/soccer to the point that even as an American, I call the sport football.&lt;/p&gt;
+
+&lt;p&gt;I was told that the best way to build your first app, if you’re strapped for ideas, is to work on something you’re passionate about so that’s what I did.  Conception to initial publishment took me a little under a week.&lt;/p&gt;
+
+&lt;p&gt;I was taught to write out what you expect your code to do in pseudocode or even just plain English, then stub out the code with fake data slowly adding on functionality until you have your final product.  It works like a dream.  For example, let’s say I have a method called &lt;code class=&quot;highlighter-rouge&quot;&gt;#ask_for_team&lt;/code&gt;; I might start out with:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def ask_for_team
+  # gets user input
+    # it evaluates the input
+    # if the input == 'exit' then exit program
+    # if input == team.name then display team
+    # if input == team.rank then display team
+    # else puts &quot;Invalid Entry&quot; then re-prompts the user for input
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You might not even have the idea of adding all that functionality, it’ll just come to you as you build it.  In regards to the code above, I just built a fake teams array and pushed fake teams into that array.  When I mean “fake” I mean data not imported from an API or scraped from a website, fake data == hardcoded data.  This allowed me to build out the method and other methods this one depended on without having the worry of getting the data right, that will come later.  Eventually, I ended up with this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def ask_for_team(input)
+
+    if input.downcase == 'exit'
+      bye
+
+    elsif input.to_i == 0
+      team = @teams.find{|team| team.name.downcase == input.downcase}
+      team != nil ? print_team(team) : spell_check
+
+    elsif input.to_i.between?(1, 20)
+      team = @teams.find{|team| team.rank == input}
+      print_team(team)
+
+    else
+      spell_check
+    end
+  end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’ll link the source code at the end because I know that the code above has a lot of unknowns for someone that isn’t familiar with the app. Nevertheless,  what I’m trying to essentially get across is that from my initial pseudocode I already knew how I wanted my code to work. Also, by doing that, I had typed it out so I don’t forget it.&lt;/p&gt;
+
+&lt;p&gt;I then hardcoded data so that I could turn the pseudocode into actual code. I made &lt;code class=&quot;highlighter-rouge&quot;&gt;team_1.name = &quot;Chelsea&quot;   team_1.rank = &quot;1&quot; team_2.name = &quot;Arsenal&quot; etc...&lt;/code&gt; then I made &lt;code class=&quot;highlighter-rouge&quot;&gt;@teams = []&lt;/code&gt; and shovelled all that hardcoded data into the array so I could build out this method.  That pseudocode and stubbing out data had helped immensely when building the app.  I could just replace the fake data with actual data and still have the method work.  It’s an invaluable tool I can see myself using for a long time.&lt;/p&gt;
+
+&lt;p&gt;As a said earlier the build process took me about a week.  The scraping was the most tasking part, but it always is.  However is also the most rewarding, and seeing everything come together is just pure bliss.&lt;/p&gt;
+
+&lt;p&gt;The source code is &lt;a href=&quot;https://github.com/jilustrisimo/epl-cli-gem&quot;&gt;available on github&lt;/a&gt; which also has a link to the gem in RubyGems.org.&lt;/p&gt;</content><summary type="html">First, I want to address why this post is mere hours after my first.  I had been sitting on my initial post for quite some time and had finally gotten enough courage to actually complete it.  With that being cleared up…</summary></entry><entry><title type="html">The Why Question</title><link href="http://localhost:4000/2017/01/29/the_why_question/" rel="alternate" type="text/html" title="The Why Question" /><published>2017-01-29T21:07:36-05:00</published><updated>2017-01-29T21:07:36-05:00</updated><id>http://localhost:4000/2017/01/29/the_why_question</id><content type="html" xml:base="http://localhost:4000/2017/01/29/the_why_question/">&lt;p&gt;I believe almost everyone takes a second to gather their thoughts when asked the simple, yet not so simple question &lt;em&gt;why?&lt;/em&gt;.  &lt;em&gt;Why&lt;/em&gt; do you believe you are right for this company? &lt;em&gt;Why&lt;/em&gt; do you want to attend this school? &lt;em&gt;Why&lt;/em&gt; do you want to do that? When the context of the conversation is serious enough, that question really causes you to think. It definitely prompts me to have to think, just like it did when I was asked to answer the question, “Why do you want to become a developer?”.&lt;/p&gt;
+
+&lt;p&gt;I really had to think about that one.  I was always very into computers when I was a kid.  I had even built my first rig when I was 11.  I had even picked up python for an ephemeral moment in time, but I sadly never persevered with learning it.   Back then I always took my interest in technology as just that, an interest.  None of my other friends were into computers or technology, let alone programming, and the only programming class ever available to me outside of college was a C++ course for seniors my high school offered.  As you may guess, the classes enrollment was low.&lt;/p&gt;
+
+&lt;p&gt;I went to college to study International Relations. My interest in computers had become a thing of my past. However, I vaguely remember taking the Myers–Briggs Type Indicator for a GenEd (general education) psychology class.  The test said I was INTP which stands for &lt;em&gt;introversion, intuition, thinking, perceiving&lt;/em&gt;. To quote Wikipedia:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;INTPs are marked by a quiet, stoic, modest, and aloof exterior that masks strong creativity and enthusiasm for novel possibilities. Their weaknesses include poor organization, insensitivity to social niceties, and a tendency to get lost in abstractions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For all the test’s faults, it had described me to a tee. Also, unlike most people, I had consistently tested INTP.
+I had discovered, in the same class, that some of the “more fitting” careers for an INTP personality included: Computer Scientist, Network Administrator, Software Developer, Web Developer…hm.&lt;/p&gt;
+
+&lt;p&gt;Let’s fast forward into my early 20’s. I was looking for a career change and had recently befriended someone who was working as a Network Administrator in NY.  He said his company was looking for a PC tech. We had talked extensively about computers and even though I had no professional experience he thought I could really excel in the field, so I took the leap and the rest was history.&lt;/p&gt;
+
+&lt;p&gt;I ended up as Network Admin at that company and I continued my trade at another company afterward.  However, I had felt something was still missing.  Currently, my job had entailed only making sure everything was up and running and if not, fix it.  The biggest thrills I ever got out of the job were if we needed to design a new network for someone because then I would use a little creativity in the matter.&lt;/p&gt;
+
+&lt;p&gt;I wanted to be able to create, design and improve on the networks and domains I was working on.  If a client wanted an app, website or some sort of functionality to work a certain way, I wanted to be able to design it myself or at least be part of the process, not just look for a solution that already existed or find someone that knew, then provide back-end support if needed.  Only then did it become clear, no matter how obvious the answer was in the past; it was the next logical step.  I needed to code.&lt;/p&gt;
+
+&lt;p&gt;In summary, the answer to the question, “Why do you want to become a developer?” was at least,  for me, obvious.  In fact, my answer may have been the better question to ask.  Why not?&lt;/p&gt;</content><summary type="html">I believe almost everyone takes a second to gather their thoughts when asked the simple, yet not so simple question why?.  Why do you believe you are right for this company? Why do you want to attend this school? Why do you want to do that? When the context of the conversation is serious enough, that question really causes you to think. It definitely prompts me to have to think, just like it did when I was asked to answer the question, “Why do you want to become a developer?”.</summary></entry></feed>

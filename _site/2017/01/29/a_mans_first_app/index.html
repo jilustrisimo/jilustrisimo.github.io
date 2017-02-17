@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="one man's foray into programming
+">
+
+    <title>A Man's First App - J. on Coding</title>
+
+    <link rel="canonical" href="http://localhost:4000/2017/01/29/a_mans_first_app/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a class="navbar-brand navbar-right" href="https://learn.co" target="_blank">
+            <h6 class="powered_by">Powered by
+                <svg id='svg__logo--text' viewBox='0 0 130.5 42' fill="currentColor" width="50" class="svg-center">
+                  <path d='M41.2,29.5h13v5.1h-19V8h6V29.5z'/>
+                  <path d='M61.1,26.7c0.4,2.6,1.9,4.1,4.3,4.1c1.5,0,2.6-0.5,3.4-1.7h5.7c-1.1,3.8-4.7,6.1-9.3,6.1 c-5.9,0-9.9-4.1-9.9-10.1c0-6,4-10.2,9.9-10.2c4.1,0,7.1,2,8.6,5.7c0.7,1.7,1,3.5,1,6.1H61.1z M68.9,22.7 c-0.2-2.3-1.6-3.5-3.8-3.5c-2.2,0-3.6,1.2-4.1,3.5H68.9z'/>
+                  <path d='M77.7,21.4c0.4-4.4,3.1-6.6,8.5-6.6c2.9,0,5.1,0.7,6.7,2c1.4,1.2,1.9,2.8,1.9,5.6v8.9 c0,2.1,0.1,2.4,0.7,3.3h-5.8c-0.2-0.7-0.2-0.8-0.4-1.5c-1.9,1.6-3.2,2-5.5,2c-4.3,0-7.1-2.4-7.1-6c0-3.6,2.3-5.5,7.7-6.4l3.1-0.5 c1.3-0.2,1.7-0.5,1.7-1.3c0-1.1-1.1-1.8-3-1.8c-2.1,0-3.2,0.7-3.4,2.3H77.7z M89.3,25.5c-0.6,0.2-1.1,0.4-2.1,0.6l-2,0.4 c-2,0.5-2.9,1.2-2.9,2.3c0,1.3,1.1,2,2.9,2c1.9,0,3.2-0.8,4.2-2.4V25.5z'/>
+                  <path d='M104.4,15.4l-0.2,3.4c1.1-3.1,2.6-4,6.7-4v5.3c-0.7-0.1-1-0.1-1.4-0.1c-2,0-3.6,0.9-4.2,2.3 c-0.6,1.3-0.8,3.1-0.8,6.8v5.4h-5.7V15.4H104.4z'/>
+                  <path d='M118.5,15.4v1.9c2.1-1.9,3.3-2.4,5.3-2.4c4.2,0,6.7,2.8,6.7,7.3v12.5h-5.7V24.1c0-2-0.1-2.7-0.6-3.4 c-0.5-0.7-1.3-1.1-2.3-1.1c-1,0-1.8,0.4-2.4,1c-0.6,0.7-0.8,1.5-0.8,3.2v10.8H113V15.4H118.5z'/>
+                  <path stroke-miterlimit='10' d='M15.1,22l8.4,0l-8.4,13.9V22z M12.4,5.6l0,13.7H4.1L12.4,5.6z M12.6,1L0.7,20.4c-0.2,0.3-0.2,0.7,0,1c0.2,0.4,0.6,0.5,1,0.5l10.8,0l0,18.4c0,0.5,0.3,1,0.8,1.1c0.1,0,0.2,0.1,0.3,0.1 c0.4,0,0.8-0.2,1-0.5l11.7-19c0.2-0.3,0.3-1.1,0.3-1.5c-0.2-0.8-0.5-1.2-1.2-1.2H15.2l0-17.5c0-0.5-0.4-1.1-1.3-1.2 c-0.1,0-0.2,0-0.3,0C13.2,0.5,12.8,0.7,12.6,1'/>
+                </svg>
+            </h6>
+        </a>
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+				
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+				
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>A Man's First App</h1>
+                    
+                    <span class="meta">Posted by jilustrisimo on January 29, 2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>First, I want to address why this post is mere hours after my first.  I had been sitting on my initial post for quite some time and had finally gotten enough courage to actually complete it.  With that being cleared up…</p>
+
+<h2 id="the-english-premier-league-cli">The English Premier League CLI</h2>
+
+<p>I just recently finished building my first app, which is now also a ruby gem.  I believe it’s fairly well written for a beginner but I’ll let others be the judge of that.  As to its practicality, I’m not so sure, but hey, this is a learning process.</p>
+
+<p>I named my app the English Premier League CLI and built it in Ruby.  it provides a CLI version of the current English Premier League (that’s the top flight of English football/soccer for the uninitiated) table.  A user can then choose to learn more about a particular club by providing input.<br />
+I have always been a fan of football/soccer to the point that even as an American, I call the sport football.</p>
+
+<p>I was told that the best way to build your first app, if you’re strapped for ideas, is to work on something you’re passionate about so that’s what I did.  Conception to initial publishment took me a little under a week.</p>
+
+<p>I was taught to write out what you expect your code to do in pseudocode or even just plain English, then stub out the code with fake data slowly adding on functionality until you have your final product.  It works like a dream.  For example, let’s say I have a method called <code class="highlighter-rouge">#ask_for_team</code>; I might start out with:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>def ask_for_team
+  # gets user input
+    # it evaluates the input
+    # if the input == 'exit' then exit program
+    # if input == team.name then display team
+    # if input == team.rank then display team
+    # else puts "Invalid Entry" then re-prompts the user for input
+end
+</code></pre>
+</div>
+
+<p>You might not even have the idea of adding all that functionality, it’ll just come to you as you build it.  In regards to the code above, I just built a fake teams array and pushed fake teams into that array.  When I mean “fake” I mean data not imported from an API or scraped from a website, fake data == hardcoded data.  This allowed me to build out the method and other methods this one depended on without having the worry of getting the data right, that will come later.  Eventually, I ended up with this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>def ask_for_team(input)
+
+    if input.downcase == 'exit'
+      bye
+
+    elsif input.to_i == 0
+      team = @teams.find{|team| team.name.downcase == input.downcase}
+      team != nil ? print_team(team) : spell_check
+
+    elsif input.to_i.between?(1, 20)
+      team = @teams.find{|team| team.rank == input}
+      print_team(team)
+
+    else
+      spell_check
+    end
+  end
+</code></pre>
+</div>
+
+<p>I’ll link the source code at the end because I know that the code above has a lot of unknowns for someone that isn’t familiar with the app. Nevertheless,  what I’m trying to essentially get across is that from my initial pseudocode I already knew how I wanted my code to work. Also, by doing that, I had typed it out so I don’t forget it.</p>
+
+<p>I then hardcoded data so that I could turn the pseudocode into actual code. I made <code class="highlighter-rouge">team_1.name = "Chelsea"   team_1.rank = "1" team_2.name = "Arsenal" etc...</code> then I made <code class="highlighter-rouge">@teams = []</code> and shovelled all that hardcoded data into the array so I could build out this method.  That pseudocode and stubbing out data had helped immensely when building the app.  I could just replace the fake data with actual data and still have the method work.  It’s an invaluable tool I can see myself using for a long time.</p>
+
+<p>As a said earlier the build process took me about a week.  The scraping was the most tasking part, but it always is.  However is also the most rewarding, and seeing everything come together is just pure bliss.</p>
+
+<p>The source code is <a href="https://github.com/jilustrisimo/epl-cli-gem">available on github</a> which also has a link to the gem in RubyGems.org.</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/01/29/the_why_question/" data-toggle="tooltip" data-placement="top" title="The Why Question">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/16/keep_it_simple_stupid/" data-toggle="tooltip" data-placement="top" title="Keep It Simple, Stupid">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="https://learn.co/jilustrisimo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <span class="learn-icon">&#66;</span>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/jilustrisimo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; jilustrisimo 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>
