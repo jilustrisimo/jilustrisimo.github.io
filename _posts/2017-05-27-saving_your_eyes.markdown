@@ -15,7 +15,7 @@ _Before we dive in:_
 
 _You should always adjust your focus at least once an hour regardless of time of day to reduce eye strain. Stare down a hallway or look out the window for a few minutes to give your eyes a break from focusing at something so close to you._
 
-## F.lux
+**F.lux**
 
 The first app I use for my computer is [f.lux](https://justgetflux.com/).  Its available on Windows, Mac and Linux for your computer and well as iPhone and Android for phones.  Its a fairly simple setup.  You set up for geographic location (zip code is usually good enough if you're in the U.S.) and the app will then adjust the color tempurature to a _warmer_ tempurature of your screen based on sunset and sunrise at your location.
 
@@ -27,7 +27,7 @@ You can customize the color tempurature during the day and night to fit what fee
 
 F.lux is an amazing app to reduce eye strain and the amount of blue light your eyes absorb at night, but what if thats not enough?  Those white webpages can still be a real bother, even with a red tint. Enter:
 
-## Dark Reader
+**Dark Reader**
 
 [Dark Reader](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) is a chrome extension that inverts the brightness of webpages with helps reduce eye strain.  Just activate then switch between normal or inverted colors on your urrent webpage by using the hotkey _Alt+Shift+A_.
 
@@ -37,7 +37,7 @@ If you want to be able to make your own dark themes for certain websites or don'
 
 The last thing left to cover are those pesky browser developer tools.  Even with everything I listed here, that bright and annoying dev tool can really really put a damper on my otherwise beatiful, _easy-on-the-eyes_ screen.  Fortunately, if you're using Chrome, there's also an app for that.
 
-## DevTools Theme: Zero Dark Matrix
+**DevTools Theme: Zero Dark Matrix**
 
 [Zero Dark Matrix](https://chrome.google.com/webstore/detail/devtools-theme-zero-dark/bomhdjeadceaggdgfoefmpeafkjhegbo) is a dark theme for the chrome developer tools.
 
