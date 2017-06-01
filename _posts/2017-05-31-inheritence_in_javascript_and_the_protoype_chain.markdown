@@ -4,74 +4,108 @@ title:  Inheritance in Javascript and the Protoype Chain
 date:   2017-05-31 19:13:56 -0400
 ---
 
+### [View on medium.com](https://medium.com/@j.onCoding/today-im-going-to-talk-about-the-prototype-chain-in-javascript-and-how-to-use-it-for-inheritance-36df3a9cf789)
 
-Today, I’m going to talk about the prototype chain in Javascript and how to use it for inheritance between different types of objects. First, know that JavaScript is a prototype-based object-oriented language whereas other languages such as Java, C++ or Ruby use traditional class systems. Also know that almost everything in JavaScript is an object and every object has a property, _prototype_, which is linked to another object. That object will have it own prototype and so on until you hit the core Object prototype. When you try to access a property of an object that it does not contain, JS will look through the prototype chain for the property.
+Today, I’m going to talk about the prototype chain in Javascript and how to use it for inheritance between different types of objects. First, know that JavaScript is a prototype-based object-oriented language whereas other languages such as Java, C++ or Ruby use traditional class systems. Also know that almost everything in JavaScript is an object and every object has a property, _proto_, which is linked to another object. That object will have it own prototype and so on until you hit the core Object prototype. When you try to access a property of an object that it does not contain, JS will look through the prototype chain for the property.
 
-
-```
-
-	function Vehicle(color, numberOfWheels) {
-		this.color = color;
-		this.numberOfWheels = numberOfWheels;
-	}
-
-	var vehicle = new Vehicle('blue', 4);
-
-	vehicle.color // 'blue'
-	vehicle.numberOfWheels // 4
-```
-
-We can add properties to Vehicle by setting them as a property of Vehicle instances in the constructor (as shown above) or by simply adding them to the Vehicle prototype.
+To see this in action we can can use a constructor function to create a certain “type” of object we will be using in our app.
 
 ```
+function Vehicle() {}
 
-	function Vehicle(color, numberOfWheels) {
-		this.color = color;
-		this.numberOfWheels = numberOfWheels;
-	}
-
-	// This will be added to the Vehicle prototype, and will be accessible to all instances of Vehicle.
-
-	Vehicle.prototype.startEngine = function() {
-		console.log('Engine started.')
-	}
-
-	var vehicle = new Vehicle('blue', 4);
-
-	console.log(vehicle.color); // 'blue'
-	console.log(vehicle.numberOfWheels); // 4
-	vehicle.startEngine(); // 'Engine started.'
+var vehicle = new Vehicle()
 ```
+<center>![image1](https://cdn-images-1.medium.com/max/800/1*RVZyo2G4gYT8h97ZfBs6eg.png)</center>
 
-Let's say we wanted to be more specific, like what type of vehicle it is and then be able to define properties speficifc to that type of vehicle that arent found in other types, like the differences between a Car, Motorcycle or Plane.  At the same time we don't want to have to rewrite the functions and properties we already have set under the Vehicle prototype above.
+We can see in the console that the Vehicle prototype is already inheriting from the core Object prototype.
+
+The constructor allows us to create multiple instances of the Vehicle prototype. Let’s add some properties to our Vehicle prototype.
 
 ```
-  ...
-	
-	function Airplane(color, numberOfWheels, wingspan) {
-	  // Use .call to be able to access object properties setters defined within the parent constructor
-		
-		Vehicle.call(this, color, numberOfWheels);
-		this.wingspan = wingspan;
-	}
+function Vehicle(color, numberOfWheels) {
+ this.color = color;
+ this.numberOfWheels = numberOfWheels;
+}
 
-  // Sets up the prototype chain to inherit from the Vehicle.prototype
-	 
-	Airplane.prototype = Object.create(Vehicle.prototype);
-	
-  // Identifies the construtor function instances of Airplane will have 
-	
-	Airplane.prototype.constructor = Airplane; 
+var vehicle = new Vehicle(‘blue’, 4);
 
-	var plane = new Airplane('white', 18, 196);
-	
-	console.log(plane.numberOfWheels); // 18
-	console.log(plane.startEngine()); // 'Engine started.'
-	
+vehicle.color // ‘blue’
+vehicle.numberOfWheels // 4
 ```
 
-Looking in the console:
+We can add properties to Vehicle by setting them as a method of Vehicle instances in the constructor (as shown above) or by adding them to the Vehicle prototype via a prototype method.
 
-<center><img src="https://i.imgur.com/gHZWWoc.png" alt="what image shows" height="200" width="400"></center>
+```
+function Vehicle(color, numberOfWheels) {
+ this.color = color;
+ this.numberOfWheels = numberOfWheels;
+}
 
-We can verify the prototype chain is set up, `plane` is an instance of `Airplane` which inherits from the `Vehicle` prototype which in turn inherits from the JS core Object prototype. We also know that since the Airplane prototype does not have its own property of `startEngine()` JS is able to go through the prototype chain to finds that property in Vehicle.
+Vehicle.prototype.startEngine = function() {
+  console.log('Engine started.');
+};
+
+var vehicle = new Vehicle('blue', 4);
+
+console.log(vehicle.color); // ‘blue’
+console.log(vehicle.numberOfWheels); // 4
+vehicle.startEngine(); // ‘Engine started.’
+```
+
+It should be noted that it is generally best practice to to add functions for the prototype via a prototype method. Binding a function to this in the constructor will re-declare the function for every instance of Vehicle, whereas using a prototype method will only add it to the Vehicle prototype, saving memory amongst other things.
+
+<center>![image2](https://cdn-images-1.medium.com/max/800/1*JWnnvcKnpEe9GOmpeFhTlQ.png)</center>
+
+Here we can see that `startEngine()` is accessible to the instance vehicle not as a property but as a prototype function.
+
+<hr>
+
+Let’s say we wanted to be more specific, like what type of vehicle something is and then be able to define properties specific to that type of vehicle that aren't found in other types, like the differences between a car, a motorcycle or a plane. At the same time, we don’t want to have to rewrite the functions and properties we already have set under the Vehicle prototype above.
+
+We can therefore create another constructor and set it to inherit from Vehicle. Using Airplane as an example:
+
+```
+...
+function Airplane(color, numberOfWheels, wingspan) {
+ Vehicle.call(this, color, numberOfWheels);
+  this.wingspan = wingspan;
+}
+ 
+Airplane.prototype = Object.create(Vehicle.prototype); 
+Airplane.prototype.constructor = Airplane;
+
+var plane = new Airplane('white', 18, 196);
+ 
+console.log(plane.numberOfWheels); // 18
+console.log(plane.startEngine()); // ‘Engine started.’
+```
+
+There’s a lot happening here so let’s break it down.
+
+First, we use `Vehicle.call` to allow instances of Airplane to be able to chain the settings in the Vehicle constructor (learn more about uses for `.call` [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)). This is all well and good but with this alone we still haven’t set up a proper prototype chain and proper inheritance.
+
+<center>![img3](https://cdn-images-1.medium.com/max/800/1*zdP5yHC_M23E03kPgk5Xmg.png)</center>
+
+We can see here that Airplane is able to set `color` and `numberOfWheels`, accessed from `Vehicle.call`, as well as its own setter `this.wingspan`. However, its still not inheriting from the Vehicle prototype and does not have access to `startEngine()`.
+
+```
+Airplane.prototype = Object.create(Vehicle.prototype);
+```
+
+This is where the magic starts. [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create/) actually sets up the prototype chain. By using Vehicle.prototype as a parameter we are setting the objects of the Airplane prototype to be an instance of the Vehicle prototype. Don’t believe me?
+
+<center>![img4](https://cdn-images-1.medium.com/max/800/1*dSIolURdR_meRkMwZ31l1Q.png)</center>
+
+Looking further into our current instance of plane we can see the Airplane prototype now has Vehicle as a parent prototype and has access to startEngine().
+
+```
+Airplane.prototype.constructor = Airplane;
+```
+
+While not required, we set the constructor so that the program knows to create an instance of Airplane and not Vehicle. Not having it can cause some issues as explained in[ this StackOverflow article](https://stackoverflow.com/questions/8453887/why-is-it-necessary-to-set-the-prototype-constructor).
+
+With everything in place, let’s look in the console:
+
+<center>![img5](https://cdn-images-1.medium.com/max/800/1*vg3kKy0f8MFXcSjDzZB_Ng.png)</center>
+
+We can verify that Airplane instances have the correct constructor, the prototype chain is set up and `plane` is an instance of Airplane which inherits from the Vehicle prototype which in turn inherits from the JS core Object prototype. We also know that since the Airplane prototype does not have its own property of `startEngine()` JS is able to go through the prototype chain to finds that property in Vehicle.
