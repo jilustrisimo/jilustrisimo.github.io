@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  Inheritence in Javascript and the Protoype Chain 
-date:   2017-05-31 23:13:55 +0000
+title:  Inheritance in Javascript and the Protoype Chain 
+date:   2017-05-31 19:13:56 -0400
 ---
 
 
-Today, we're going to discuss the protoype chain in Javascript and how to use it for inheritence between different types of objects. First, know that JavaScript is a prototype-based object-oriented language whereas other languages such as Java, C++ or Ruby use traditional class systems.  Also know that almost everything in JavaScript is an object and every object has a property, _prototype_, which is linked to another object. *That* object will have it own prototype and so on until you hit the core Object prototype.  When you try to access a property of an object that it does not contain, JS will look through the prototype chain for the property.
+Today, I’m going to talk about the prototype chain in Javascript and how to use it for inheritance between different types of objects. First, know that JavaScript is a prototype-based object-oriented language whereas other languages such as Java, C++ or Ruby use traditional class systems. Also know that almost everything in JavaScript is an object and every object has a property, _prototype_, which is linked to another object. That object will have it own prototype and so on until you hit the core Object prototype. When you try to access a property of an object that it does not contain, JS will look through the prototype chain for the property.
+
 
 ```
 
@@ -48,6 +49,8 @@ Let's say we wanted to be more specific, like what type of vehicle it is and the
   ...
 	
 	function Airplane(color, numberOfWheels, wingspan) {
+	  // Use .call to be able to access object properties setters defined within the parent constructor
+		
 		Vehicle.call(this, color, numberOfWheels);
 		this.wingspan = wingspan;
 	}
@@ -71,4 +74,4 @@ Looking in the console:
 
 <center><img src="https://i.imgur.com/gHZWWoc.png" alt="what image shows" height="200" width="400"></center>
 
-We can verify the prototype chain is set up.  `plane` is an instance of `Airplane` which inherits from the Vehicle prototype which in turn inherits from the JS core Object prototype.  We also know that since the `Airplane` prototype does not have its own property of `startEngine()` JS is able to go through the prototype chain to finds that property in `Vehicle`.
+We can verify the prototype chain is set up, `plane` is an instance of `Airplane` which inherits from the `Vehicle` prototype which in turn inherits from the JS core Object prototype. We also know that since the Airplane prototype does not have its own property of `startEngine()` JS is able to go through the prototype chain to finds that property in Vehicle.
