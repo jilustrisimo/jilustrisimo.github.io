@@ -15,7 +15,7 @@ function Vehicle() {}
 
 var vehicle = new Vehicle()
 ```
-<center>![image1](https://cdn-images-1.medium.com/max/800/1*RVZyo2G4gYT8h97ZfBs6eg.png)</center>
+<center><img src='https://cdn-images-1.medium.com/max/800/1*RVZyo2G4gYT8h97ZfBs6eg.png'></center>
 
 We can see in the console that the Vehicle prototype is already inheriting from the core Object prototype.
 
@@ -54,7 +54,7 @@ vehicle.startEngine(); // ‘Engine started.’
 
 It should be noted that it is generally best practice to to add functions for the prototype via a prototype method. Binding a function to this in the constructor will re-declare the function for every instance of Vehicle, whereas using a prototype method will only add it to the Vehicle prototype, saving memory amongst other things.
 
-<center>![image2](https://cdn-images-1.medium.com/max/800/1*JWnnvcKnpEe9GOmpeFhTlQ.png)</center>
+<center><img src='https://cdn-images-1.medium.com/max/800/1*JWnnvcKnpEe9GOmpeFhTlQ.png'></center>
 
 Here we can see that `startEngine()` is accessible to the instance vehicle not as a property but as a prototype function.
 
@@ -84,7 +84,7 @@ There’s a lot happening here so let’s break it down.
 
 First, we use `Vehicle.call` to allow instances of Airplane to be able to chain the settings in the Vehicle constructor (learn more about uses for `.call` [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)). This is all well and good but with this alone we still haven’t set up a proper prototype chain and proper inheritance.
 
-<center>![img3](https://cdn-images-1.medium.com/max/800/1*zdP5yHC_M23E03kPgk5Xmg.png)</center>
+<center><img src='https://cdn-images-1.medium.com/max/800/1*zdP5yHC_M23E03kPgk5Xmg.png'></center>
 
 We can see here that Airplane is able to set `color` and `numberOfWheels`, accessed from `Vehicle.call`, as well as its own setter `this.wingspan`. However, its still not inheriting from the Vehicle prototype and does not have access to `startEngine()`.
 
@@ -94,7 +94,7 @@ Airplane.prototype = Object.create(Vehicle.prototype);
 
 This is where the magic starts. [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create/) actually sets up the prototype chain. By using Vehicle.prototype as a parameter we are setting the objects of the Airplane prototype to be an instance of the Vehicle prototype. Don’t believe me?
 
-<center>![img4](https://cdn-images-1.medium.com/max/800/1*dSIolURdR_meRkMwZ31l1Q.png)</center>
+<center><img src='https://cdn-images-1.medium.com/max/800/1*dSIolURdR_meRkMwZ31l1Q.png'></center>
 
 Looking further into our current instance of plane we can see the Airplane prototype now has Vehicle as a parent prototype and has access to startEngine().
 
@@ -106,6 +106,6 @@ While not required, we set the constructor so that the program knows to create a
 
 With everything in place, let’s look in the console:
 
-<center>![img5](https://cdn-images-1.medium.com/max/800/1*vg3kKy0f8MFXcSjDzZB_Ng.png)</center>
+<center><img src='https://cdn-images-1.medium.com/max/800/1*vg3kKy0f8MFXcSjDzZB_Ng.png'></center>
 
 We can verify that Airplane instances have the correct constructor, the prototype chain is set up and `plane` is an instance of Airplane which inherits from the Vehicle prototype which in turn inherits from the JS core Object prototype. We also know that since the Airplane prototype does not have its own property of `startEngine()` JS is able to go through the prototype chain to finds that property in Vehicle.
