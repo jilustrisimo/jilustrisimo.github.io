@@ -4,7 +4,7 @@ title:  Inheritance in Javascript and the Protoype Chain
 date:   2017-05-31 19:13:56 -0400
 ---
 
-### [View on medium.com](https://medium.com/@j.onCoding/prototypal-inheritance-in-js-3b03df2dc4c0)
+## [View UPDATED article on medium.com](https://medium.com/@j.onCoding/prototypal-inheritance-in-js-3b03df2dc4c0)
 
 Today, I’m going to talk about the prototype chain in Javascript and how to use it for inheritance between different types of objects. First, know that JavaScript is a prototype-based object-oriented language whereas other languages such as Java, C++ or Ruby use traditional class systems. Also know that almost everything in JavaScript is an object and every object has a property, _proto_, which is linked to another object. That object will have it own prototype and so on until you hit the core Object prototype. When you try to access a property of an object that it does not contain, JS will look through the prototype chain for the property.
 
