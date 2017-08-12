@@ -4,7 +4,7 @@ title:  "Saving Your Eyes"
 date:   2017-05-27 17:01:43 -0400
 ---
 
-[View on Medium.com](https://medium.com/@j.onCoding/saving-your-eyes-b6c06872240e)
+<center><a href="https://medium.com/@j.onCoding/saving-your-eyes-b6c06872240e"><font size="+2">View article on medium.com</font></a></center>
 
 If you're anything like me, you depise bright lights at night.  I enjoy working in a dark envirnment unless the sun is out; between the bright, blue-lit screens of my monitor, TV and cell phone, not only are my eyes completely strained by the end of the night, but I'm also no where near ready to sleep once I shut all the screens off.  All these screens on at night can [affect the quality of your sleep](http://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side).  Here is a short video dicussing the problems blue light have have on your sleep pattern.  It focuses on light coming from mobile phones but the same can be applied to computer monitors:
 
